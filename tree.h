@@ -13,5 +13,6 @@ void addValueToTree(int);
 void strToTree(char *);
 void printTreeAscending();
 void deleteTree();
+void deleteValue(int);
 
 #endif
