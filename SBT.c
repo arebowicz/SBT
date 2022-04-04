@@ -44,6 +44,7 @@ static void treeTest(char *str, int value) {
   printf("\n");
   deleteValue(value);
   printTreeAscending();
+  printTreeHeight();
   printf("\n\n");
   deleteTree();
   return;

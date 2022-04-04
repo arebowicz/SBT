@@ -163,3 +163,35 @@ void deleteValue(int value) {
     return;
   }
 }
+
+static int height = 0;
+
+void treeHeight(treeNode *node, int actualHeight) {
+  if(node == NULL)
+    return;
+  if(actualHeight > height)
+    height = actualHeight;
+  treeHeight(node->leftChild, actualHeight+1);
+  treeHeight(node->rightChild, actualHeight+1);
+  return;
+}
+
+/*
+int treeHeight2(treeNode *node, int actualHeight) {
+  if(node->leftChild == NULL && node->rightChild == NULL)
+    return actualHeight;
+  int nl, nr;
+  nl = nr = 0;
+  if(node->leftChild != NULL)
+    nl = treeHeight2(node->leftChild, actualHeight+1);
+  if(node->rightChild != NULL)
+    nr = treeHeight2(node->rightChild, actualHeight+1);
+  return (nl > nr) ? nl : nr;
+}
+*/
+
+void printTreeHeight() {
+  height = 0;
+  treeHeight(t.root, 0);
+  printf("\nTree height: %d\n", height);
+}

@@ -14,5 +14,6 @@ void strToTree(char *);
 void printTreeAscending();
 void deleteTree();
 void deleteValue(int);
+void printTreeHeight();
 
 #endif
